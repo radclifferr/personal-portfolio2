@@ -10,6 +10,14 @@
 .features>article>video {
 	padding-bottom: 20px;
 }
+.skill-container {
+	display: flex;
+	justify-content: space-between;
+}
+.project-buttons{
+	display: flex;
+	justify-content: space-around;
+}
 
 
 html, body, div, span, applet, object,
