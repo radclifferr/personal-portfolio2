@@ -1,8 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
 
-
-
 .features>article{
 	display: flex;
 	flex-direction: column;
@@ -17,8 +15,9 @@
 }
 .project-buttons{
 	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
-}
+} 
 
 
 html, body, div, span, applet, object,
@@ -188,10 +187,13 @@ input, select, textarea {
 		-moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
+		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out; 
 		color: #ffffff;
 		text-decoration: none;
+	}
+	#success,
+	#failure {
+		display:none;
 	}
 
 		a:hover {
