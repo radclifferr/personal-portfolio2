@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
 	</head>
 	<body> 
 		<section id="banner">
@@ -14,8 +15,8 @@
 				<p>I create bespoke websites and mobile apps to help you go further online. </br></p>
 				<p>Specializing in ReactJs and React Native frameworks, I use the latest technology stacks to make <u><em>your</em></u> next amazing project shine.</p>
 				<div class="button-container">
-					<p><button>View My Resume</button></p>
-					<p><button>Contact Me</button></p>
+					<p><a href="http://docs.google.com/gview?url=https://docs.google.com/document/d/1WN9Uo9lYe9EH0aWyIinuOF_ewA3aTrrtwsludaG3Sok/export?format=pdf" target="_blank"><button>View My Resume</button></a></p>
+					<p><a href="#footer"><button>Contact Me</button></a></p>
 				</div>
 			</div>
 		</section>
@@ -66,7 +67,8 @@
 								</ul>
 								<div class="project-buttons">
 									<p><button><s>Code: Proprietary</s></button></p>
-									<p><button><a href="https://idcwoodcraft.com/" target="_blank" rel="noopener noreferrer">Live View</a></button></p>
+									<p><button><a href="https://play.google.com/store/apps/details?id=com.idc.woodcraft.app&hl=en_US&gl=US" target="_blank" rel="noopener noreferrer">View On Google Play</a></button></p>
+									<p><button><a href="https://idcwoodcraft.com/" target="_blank" rel="noopener noreferrer">View on Apple Store</a></button></p>
 								</div>
 
 							</article>
@@ -94,10 +96,9 @@
 								<ul>
 									<li>Developed with ReactJs for a seamless single page user experience</li>
 									<li>Styled from the ground up for easy refactoring with CSS3 global variables.</li>
-									<li>Unit tested with Jest testing framework. </li>
 								</ul>
 								<div class="project-buttons">
-									<p><button><a href="https://github.com/radclifferr/gather-for-cheese" target="_blank" rel="noopener noreferrer">Code</a></button></p>
+									<p><a href="https://github.com/radclifferr/gather-for-cheese" target="_blank" rel="noopener noreferrer"><button>Code</button></a></p>
 									<p><a href="https://gatherforcheese.com/" target="_blank" rel="noopener noreferrer"><button>Live View</button></a></p>
 								</div>
 							</article>
@@ -109,7 +110,7 @@
 								<ul>
 									<li>Made from start to finish through several iterations to deliver a streamlined purchasing experience.</li>
 									<li>Utilized Wordpress CMS to allow for ease of client management after delivery.</li>
-									<li>Provided custom assets with Adobe Photoshop and Illustrator.</li>
+									<li>Built custom image assets with Adobe Photoshop and Illustrator.</li>
 								</ul>
 								<div class="project-buttons">
 									<p><button><s>Code: Proprietary</s></button></p>
@@ -124,24 +125,45 @@
 
 		<!-- Footer -->
 		<section id="footer">
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+			<script type="text/javascript">
+				(function() {
+					emailjs.init('vibdgqjOq7saCbBfh');
+				})();
+			</script>
+			<script type="text/javascript">
+				window.onload = function() {
+					document.getElementById('contact-form').addEventListener('submit', function(event) {
+						event.preventDefault();
+						emailjs.sendForm('service_ethdyws', 'template_quuoznz', this)
+							.then(function() {
+								document.getElementById("success").style.display = "block";
+							}, function(error) {
+								document.getElementById("failure").style.display = "block";
+							});
+					});
+				}
+			</script>
 			<div class="inner">
 				<h2 class="major">Get in touch</h2>
 				<p>Please reach out to radcliffer94@gmail.com or use the contact form below. I look forward to hearing from you. </p>
-				<form method="post" action="#">
+				<form method="post" id="contact-form">
 					<div class="fields">
 						<div class="field">
-							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
+							<label for="name">Name*</label>
+							<input type="text" name="name" id="name" required />
 						</div>
 						<div class="field">
-							<label for="email">Email</label>
-							<input type="email" name="email" id="email" />
+							<label for="email">Email*</label>
+							<input type="email" name="email" id="email" required />
 						</div>
 						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="4"></textarea>
+							<label for="message">Message*</label>
+							<textarea name="message" id="message" rows="4" required></textarea>
 						</div>
 					</div>
+					<div id="success">Your message was sent successfully!</div>
+					<div id="failure">Your message was not sent successfully! Reach out over email instead at radcliffer94@gmail.com!</div>
 					<ul class="actions">
 						<li><input type="submit" value="Send Message" /></li>
 					</ul>
@@ -151,8 +173,8 @@
 						Sweet Home, OR 97386
 					</li>
 					<li class="icon solid fa-phone">(858) 261-5614</li>
-					<li class="icon solid fa-envelope"><a href="mailto:radcliffer94@gmail.com" target="_blank" rel="noopener noreferrer">radcliffer94@gmail.com</a></li>
-					<li class="icon brands fa-instagram"><a href="https://www.github.com/radclifferr?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+					<li class="icon solid fa-envelope"><a href="mailto:radcliffer94@gmail.com">radcliffer94@gmail.com</a></li>
+					<li class="icon brands fa-instagram"><a href="https://www.github.com/radclifferr" target="_blank" rel="noopener noreferrer">GitHub</a></li>
 					<li class="icon brands fa-instagram"><a href="https://www.linkedin.com/in/radcliffer" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
 				</ul>
 			</div>
